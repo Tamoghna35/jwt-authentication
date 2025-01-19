@@ -8,7 +8,7 @@ Task.belongsTo(User, { foreignKey: 'user_id' });
 const connectDB = async () => {
     try {
         await sequelize.authenticate();
-        sequelize.sync({ force: true });
+        sequelize.sync();
         console.log("Connection has been established successfully.");
     } catch (error) {
         console.error("Unable to connect to the database:", error);
